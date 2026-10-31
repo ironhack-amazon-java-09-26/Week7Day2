@@ -1,9 +1,6 @@
 package com.ironhack.hellocrud.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,8 +13,7 @@ public class Monster {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Enumerated(EnumType.STRING)
+    private MonsterHabitat habitat;
 
-    public Monster(String name) {
-        this.name = name;
-    }
 }
